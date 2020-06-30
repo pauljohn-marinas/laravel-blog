@@ -6,13 +6,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item {{ ('home' == request()->path()) ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">My Profile</a>
+        <li class="nav-item {{ ('profile' == request()->path()) ? 'active' : '' }}">
+          <a class="nav-link" href="{{ route('profile.index') }}">My Profile</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {{ ('post' == request()->path()) ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('post.index') }}">My Posts</a>
         </li>
       </ul>

@@ -59,4 +59,9 @@ class PostController extends Controller
         $post->delete();
         return redirect(route('post.index'));
     }
+
+    public function show($id) {
+        $post = Post::find($id);
+        return view('blog.post-detail', compact('post'));
+    }
 }

@@ -11,4 +11,6 @@ class BlogController extends Controller
         $posts = Post::orderBy('id', 'desc')->paginate(9);
         return view('blog.index', compact('posts'));
     }
+
+    
 }

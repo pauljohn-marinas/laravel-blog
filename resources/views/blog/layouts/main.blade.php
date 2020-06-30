@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel - Blog</title>
     <link href="{{ asset('/css/app.css')}}" rel="stylesheet">
+    
 </head>
 <body>
     @include('blog.include.nav')
@@ -15,5 +16,6 @@
         © 2020 Laravel - Blog. All rights reserved. Created by Paul
     </footer>
     <script src="{{ asset('/js/app.js')}}"></script>
+    <script src="https://use.fontawesome.com/b4c4382a5e.js"></script>
 </body>
 </html>
