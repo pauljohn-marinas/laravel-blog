@@ -22,11 +22,20 @@ class PostController extends Controller
     }
 
     public function store(Request $request) {
+        $validateData  = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'thumbnail' => 'required|image',
+        ]);
+
+        $filename = $request->thumbnail->getClientOriginalName();
+        $request->file('thumbnail')->storeAs('uploads', $filename, 'public' );
+
         $post = new Post;
         $post->user_id = auth()->user()->id;
         $post->title = $request->input('title');
         $post->content = $request->input('content');
-        $post->thumbnail = 'image';
+        $post->thumbnail = $filename;
         $post->save();
 
         return redirect(route('post.index'));
