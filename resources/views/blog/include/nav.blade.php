@@ -29,8 +29,18 @@
             @endif
         @else
             <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                    @if(Auth::user()->profile_img)
+                      <div class="avatar-container mx-2">
+                        <img class="img-fluid" src="{{asset('storage/uploads/'.Auth::user()->profile->profile_img)}}" alt="">
+                      </div>
+                    @else
+                      <div class="avatar-container mx-2">
+                        <img class="img-fluid" src="{{asset('storage/uploads/default.jpg')}}" alt="">
+                      </div>
+                    @endif
+                    <span class="caret"></span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

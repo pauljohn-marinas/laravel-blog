@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel - Blog</title>
     <link href="{{ asset('/css/app.css')}}" rel="stylesheet">
-    
+    <style>
+        .avatar-container {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     @include('blog.include.nav')
